@@ -1,3 +1,24 @@
+/*
+ *  BIP39 library, a Java implementation of BIP39
+ *  Copyright (C) 2017 Tongjian Cui, elseifn
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ *
+ *  Original source: https://github.com/elseifn/Lib39
+ *  You can contact the authors via github issues.
+ */
+
 package io.github.elseifn.lib39;
 
 import io.github.elseifn.lib39.Validation.InvalidChecksumException;
@@ -7,11 +28,8 @@ import io.github.elseifn.lib39.Validation.WordNotFoundException;
 import java.util.Arrays;
 import java.util.Comparator;
 
-import static io.github.elseifn.lib39.MnemonicGeneration.firstByteOfSha256;
+import static io.github.elseifn.lib39.MnemonicGenerator.firstByteOfSha256;
 
-/**
- * Created by aevans on 2017-10-08.
- */
 public final class MnemonicValidator {
     private final WordAndIndex[] words;
     private final char space;
