@@ -21,11 +21,13 @@
 
 package io.github.elseifn.lib39;
 
+import io.github.elseifn.toruntime.CheckedExceptionToRuntime;
+
 import java.security.MessageDigest;
 import java.util.Arrays;
 
 import static io.github.elseifn.lib39.ByteUtils.next11Bits;
-import static io.github.elseifn.lib39.CheckedExceptionToRuntime.toRuntime;
+import static io.github.elseifn.toruntime.CheckedExceptionToRuntime.toRuntime;
 
 public final class MnemonicGenerator {
 

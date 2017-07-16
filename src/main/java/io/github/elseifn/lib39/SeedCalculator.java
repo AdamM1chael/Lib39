@@ -21,13 +21,15 @@
 
 package io.github.elseifn.lib39;
 
+import io.github.elseifn.toruntime.CheckedExceptionToRuntime;
+
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 import java.text.Normalizer;
 import java.util.Arrays;
 
-import static io.github.elseifn.lib39.CheckedExceptionToRuntime.toRuntime;
+import static io.github.elseifn.toruntime.CheckedExceptionToRuntime.toRuntime;
 
 public final class SeedCalculator {
 
