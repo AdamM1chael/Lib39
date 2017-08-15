@@ -19,22 +19,18 @@
  *  You can contact the authors via github issues.
  */
 
-package io.github.elseifn.lib39;
+package io.github.elseifn.testjson;
 
-public interface WordList {
+import io.github.elseifn.Resources;
 
-    /**
-     * Get a word in the word list.
-     *
-     * @param index Index of word in the word list [0..2047] inclusive.
-     * @return the word from the list.
-     */
-    String getWord(final int index);
+import static org.junit.Assert.assertEquals;
 
-    /**
-     * Get the space character for this language.
-     *
-     * @return a whitespace character.
-     */
-    char getSpace();
+public final class EnglishJson {
+    public String[][] english;
+
+    public static EnglishJson load() {
+        final EnglishJson data = Resources.loadJsonResource("bip39_english_test_vectors.json", EnglishJson.class);
+        assertEquals(24, data.english.length);
+        return data;
+    }
 }
