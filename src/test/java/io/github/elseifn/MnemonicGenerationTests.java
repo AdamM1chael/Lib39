@@ -23,6 +23,7 @@ package io.github.elseifn;
 
 import io.github.elseifn.lib39.MnemonicGenerator;
 import io.github.elseifn.lib39.WordList;
+import io.github.elseifn.lib39.wordlists.Spanish;
 import io.github.elseifn.testjson.EnglishJson;
 import io.github.elseifn.testjson.TestVector;
 import io.github.elseifn.testjson.TestVectorJson;
@@ -133,6 +134,14 @@ public final class MnemonicGenerationTests {
         final TestVectorJson data = TestVectorJson.loadFrench();
         for (final TestVector testVector : data.vectors) {
             assertEquals(testVector.mnemonic, createMnemonic(testVector.entropy, French.INSTANCE));
+        }
+    }
+
+    @Test
+    public void all_spanish_test_vectors() throws Exception {
+        final TestVectorJson data = TestVectorJson.loadSpanish();
+        for (final TestVector testVector : data.vectors) {
+            assertEquals(testVector.mnemonic, createMnemonic(testVector.entropy, Spanish.INSTANCE));
         }
     }
 

@@ -67,6 +67,9 @@ repositories {
     maven {
         url 'https://dl.bintray.com/elseifn/Hashing/'
     }
+    maven {
+        url 'https://dl.bintray.com/elseifn/BIP/'
+    }
 }
 
 compileJava {
@@ -81,6 +84,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
     testCompile 'com.google.code.gson:gson:2.8.2'
     testCompile 'org.assertj:assertj-core:3.8.0'
+    testCompile 'io.github.elseifn:Base58:0.1.1@jar'
+    testCompile 'io.github.elseifn:BIP32:0.0.3@jar'
 }
 
 dependencyUpdates {

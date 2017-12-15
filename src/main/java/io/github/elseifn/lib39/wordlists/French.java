@@ -24,7 +24,7 @@ package io.github.elseifn.lib39.wordlists;
 import io.github.elseifn.lib39.WordList;
 
 /**
- * Source: https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt
+ * Source: https://github.com/bitcoin/bips/blob/master/bip-0039/french.txt
  */
 public enum French implements WordList {
     INSTANCE;
