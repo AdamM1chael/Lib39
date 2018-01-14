@@ -23,7 +23,7 @@ package io.github.elseifn;
 
 import io.github.elseifn.bip32.PrivateKey;
 import io.github.elseifn.bip32.networks.Bitcoin;
-import io.github.elseifn.lib39.JavaxPBKDF2WithHmacSHA256;
+import io.github.elseifn.lib39.JavaxPBKDF2WithHmacSHA512;
 import io.github.elseifn.lib39.SeedCalculator;
 import io.github.elseifn.testjson.EnglishJson;
 import io.github.elseifn.testjson.TestVector;
@@ -117,7 +117,7 @@ public final class SeedCalculationTests {
 
     private static String calculateSeedHex(String mnemonic, String passphrase) {
         final String seed1 = calculateSeed(mnemonic, passphrase, new SeedCalculator());
-        final String seed2 = calculateSeed(mnemonic, passphrase, new SeedCalculator(JavaxPBKDF2WithHmacSHA256.INSTANCE));
+        final String seed2 = calculateSeed(mnemonic, passphrase, new SeedCalculator(JavaxPBKDF2WithHmacSHA512.INSTANCE));
         assertEquals(seed1, seed2);
         return seed1;
     }
