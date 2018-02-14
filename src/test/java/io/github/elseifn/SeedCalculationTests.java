@@ -21,7 +21,7 @@
 
 package io.github.elseifn;
 
-import io.github.elseifn.bip32.PrivateKey;
+import io.github.elseifn.bip32.ExtendedPrivateKey;
 import io.github.elseifn.bip32.networks.Bitcoin;
 import io.github.elseifn.lib39.JavaxPBKDF2WithHmacSHA512;
 import io.github.elseifn.lib39.SeedCalculator;
@@ -31,7 +31,6 @@ import io.github.elseifn.testjson.TestVectorJson;
 import org.junit.Test;
 
 import static io.github.elseifn.Hex.toHex;
-import static io.github.elseifn.base58.Base58.base58Encode;
 import static org.junit.Assert.assertEquals;
 
 public final class SeedCalculationTests {
@@ -107,7 +106,7 @@ public final class SeedCalculationTests {
     private static void testSeedGeneration(TestVector testVector) {
         final byte[] seed = new SeedCalculator().calculateSeed(testVector.mnemonic, testVector.passphrase);
         assertEquals(testVector.seed, toHex(seed));
-        assertEquals(testVector.bip32Xprv, base58Encode(PrivateKey.fromSeed(seed, Bitcoin.MAIN_NET).toByteArray()));
+        assertEquals(testVector.bip32Xprv, ExtendedPrivateKey.fromSeed(seed, Bitcoin.MAIN_NET).extendedBase58());
     }
 
     private static String calculateSeedHex(final String mnemonic) {
