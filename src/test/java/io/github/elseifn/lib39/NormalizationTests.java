@@ -1,6 +1,6 @@
 /*
  *  BIP39 library, a Java implementation of BIP39
- *  Copyright (C) 2017-2018 Tongjian Cui, elseifn
+ *  Copyright (C) 2017-2019 Tongjian Cui, elseifn
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -23,10 +23,13 @@ package io.github.elseifn.lib39;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertNotNull;
+
 public final class NormalizationTests {
 
     @Test
     public void forCodeCoverageOnly_create() {
-        new Normalization();
+        //noinspection ObviousNullCheck
+        assertNotNull(new Normalization());
     }
 }
